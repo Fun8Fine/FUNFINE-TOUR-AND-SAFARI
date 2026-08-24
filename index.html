@@ -1,76 +1,2471 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNFINE TOUR AND SAFARI</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FUNFINE TOUR AND SAFARI | FUN IS FINE</title>
+
+<meta name="description" content="FUNFINE TOUR AND SAFARI - Discover Tanzania through unforgettable safaris, Zanzibar holidays and Kilimanjaro adventures.">
+
+<style>
+/* =========================================================
+   FUNFINE TOUR AND SAFARI
+   MAIN COLORS
+   ========================================================= */
+
+:root {
+  --green: #123f32;
+  --green2: #1b6047;
+  --dark: #09271f;
+  --gold: #e4ad45;
+  --gold2: #f5d27d;
+  --sand: #f6f0e3;
+  --cream: #fffdf8;
+  --blue: #07858d;
+  --text: #24312b;
+  --muted: #69756f;
+  --white: #ffffff;
+  --shadow: 0 15px 45px rgba(0,0,0,.12);
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(9,39,31,.96);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: .5px;
+}
+
+.logo span {
+  color: var(--gold2);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--gold2);
+}
+
+.nav-book {
+  background: var(--gold);
+  color: var(--dark) !important;
+  padding: 11px 19px;
+  border-radius: 30px;
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 100vh;
+  padding-top: 78px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(5,35,27,.48),
+      rgba(5,35,27,.76)
+    ),
+    url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-label {
+  display: inline-block;
+  border: 1px solid rgba(245,210,125,.65);
+  background: rgba(245,210,125,.12);
+  color: var(--gold2);
+  padding: 8px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 86px);
+  line-height: .98;
+  margin-bottom: 14px;
+}
+
+.hero h1 span {
+  color: var(--gold2);
+}
+
+.slogan {
+  font-size: clamp(25px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 680px;
+  color: #f0f4f2;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 23px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.btn-primary:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: white;
+  border: 1px solid rgba(255,255,255,.8);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--dark);
+}
+
+.btn-green {
+  background: var(--green);
+  color: white;
+}
+
+.btn-green:hover {
+  background: var(--green2);
+}
+
+/* =========================================================
+   CHOOSE EXPERIENCE
+   ========================================================= */
+
+section {
+  padding: 90px 0;
+}
+
+.heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px;
+}
+
+.heading small {
+  color: var(--blue);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.heading h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  margin: 9px 0 14px;
+}
+
+.heading p {
+  color: var(--muted);
+}
+
+.experiences {
+  background: var(--sand);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.experience {
+  min-height: 370px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.experience img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.experience:hover img {
+  transform: scale(1.08);
+}
+
+.experience::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 25%,
+    rgba(0,0,0,.84)
+  );
+}
+
+.experience-content {
+  position: absolute;
+  z-index: 2;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  color: white;
+}
+
+.experience-icon {
+  font-size: 35px;
+}
+
+.experience h3 {
+  font-size: 29px;
+  margin: 5px 0;
+}
+
+.experience p {
+  color: #e6ece8;
+  margin-bottom: 15px;
+}
+
+.experience-link {
+  color: var(--gold2);
+  font-weight: 800;
+}
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.destination-section {
+  background: white;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.destination {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.destination img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.destination:hover img {
+  transform: scale(1.08);
+}
+
+.destination::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 35%,rgba(0,0,0,.82));
+}
+
+.destination-info {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  color: white;
+}
+
+.destination-info h3 {
+  font-size: 23px;
+}
+
+.destination-info p {
+  font-size: 13px;
+  color: #e9efeb;
+}
+
+/* =========================================================
+   TOUR CATALOG
+   ========================================================= */
+
+.catalog {
+  background: var(--sand);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 35px;
+}
+
+.filter {
+  border: 1px solid #d9d2c3;
+  background: white;
+  color: var(--green);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 800;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.tour-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.tour-photo {
+  height: 225px;
+  position: relative;
+}
+
+.tour-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.tour-body {
+  padding: 22px;
+}
+
+.tour-category {
+  color: var(--blue);
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.tour-body h3 {
+  color: var(--green);
+  font-size: 22px;
+  margin: 5px 0 8px;
+}
+
+.tour-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.tour-body p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.tour-footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price {
+  color: var(--green);
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.price small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: normal;
+}
+
+/* =========================================================
+   TOUR DETAILS MODAL
+   ========================================================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,.7);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-box {
+  width: min(900px,100%);
+  margin: 50px auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.modal-image {
+  height: 330px;
+  position: relative;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.close {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  font-size: 22px;
+  z-index: 3;
+}
+
+.modal-content {
+  padding: 30px;
+}
+
+.modal-content h2 {
+  color: var(--green);
+  font-size: 34px;
+  margin-bottom: 7px;
+}
+
+.modal-price {
+  color: var(--blue);
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.modal-content h3 {
+  color: var(--green);
+  margin: 22px 0 8px;
+}
+
+.itinerary {
+  list-style: none;
+}
+
+.itinerary li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.itinerary strong {
+  color: var(--green);
+}
+
+.included {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.included div {
+  background: var(--sand);
+  padding: 9px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   ZANZIBAR FEATURE
+   ========================================================= */
+
+.zanzibar {
+  color: white;
+  background:
+    linear-gradient(90deg,rgba(7,45,43,.9),rgba(7,45,43,.25)),
+    url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.zanzibar-content {
+  max-width: 680px;
+}
+
+.zanzibar h2 {
+  font-size: clamp(35px,5vw,60px);
+  line-height: 1.05;
+  margin-bottom: 15px;
+}
+
+.zanzibar p {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   WHY US
+   ========================================================= */
+
+.why {
+  background: var(--green);
+  color: white;
+}
+
+.why .heading h2 {
+  color: white;
+}
+
+.why .heading p {
+  color: #d3ded8;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.benefit {
+  padding: 27px 20px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.benefit h3 {
+  margin-bottom: 7px;
+}
+
+.benefit p {
+  color: #d3ded8;
+  font-size: 13px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.about-text small {
+  color: var(--blue);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-text h2 {
+  color: var(--green);
+  font-size: clamp(32px,4vw,48px);
+  line-height: 1.05;
+  margin: 10px 0 17px;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.checks {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.checks li {
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.checks li::before {
+  content: "✓";
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+/* =========================================================
+   BOOKING
+   ========================================================= */
+
+.booking {
+  background: var(--sand);
+}
+
+.booking-box {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.booking-info {
+  background: var(--green);
+  color: white;
+  padding: 45px;
+}
+
+.booking-info h2 {
+  font-size: 36px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.booking-info p {
+  color: #d5e0da;
+  margin-bottom: 25px;
+}
+
+.contact {
+  margin: 18px 0;
+}
+
+.contact strong {
+  display: block;
+  color: var(--gold2);
+}
+
+.booking-form {
+  padding: 45px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.full {
+  grid-column: 1/-1;
+}
+
+label {
+  display: block;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d7ddd9;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blue);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 60px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+footer h3 {
+  color: var(--gold2);
+  margin-bottom: 14px;
+}
+
+footer p,
+footer li,
+footer a {
+  color: #c4d0ca;
+  font-size: 14px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  margin: 8px 0;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 20px;
+  text-align: center;
+  color: #8fa199;
+  font-size: 12px;
+}
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  z-index: 1500;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+.whatsapp:hover {
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px) {
+  .destination-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .tour-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:760px) {
+
+  .menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    background: var(--dark);
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .experience-grid,
+  .tour-grid,
+  .about-grid,
+  .booking-box {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-info,
+  .booking-form {
+    padding: 30px;
+  }
+}
+
+@media(max-width:560px) {
+
+  section {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .destination-grid,
+  .benefits,
+  .footer-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .included {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 8px;
+  }
+
+  .modal-box {
+    margin: 20px auto;
+  }
+
+  .modal-image {
+    height: 240px;
+  }
+}
+</style>
 </head>
+
+
 <body>
-    <!-- Header/Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">FUNFINE TOUR & SAFARI</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#tours">Tours</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to FUNFINE TOUR AND SAFARI</h1>
-            <p>Explore the beauty of nature with us</p>
-            <button class="cta-button">Book Your Adventure</button>
+<!-- ========================================================
+     NAVIGATION
+     ======================================================== -->
+
+<header>
+
+  <div class="container navbar">
+
+    <a href="#home" class="logo">
+      FUNFINE <span>TOUR AND SAFARI</span>
+    </a>
+
+    <button class="menu" id="menuBtn">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#tours">Tours</a></li>
+      <li><a href="#zanzibar">Zanzibar</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#booking" class="nav-book">Book Now</a></li>
+    </ul>
+
+  </div>
+
+</header>
+
+
+<!-- ========================================================
+     HERO
+     ======================================================== -->
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        🇹🇿 ZANZIBAR • TANZANIA
+      </div>
+
+      <h1>
+        FUNFINE<br>
+        <span>TOUR AND SAFARI</span>
+      </h1>
+
+      <div class="slogan">
+        FUN IS FINE.
+      </div>
+
+      <p>
+        Discover the wild beauty of Tanzania, experience
+        unforgettable safaris, explore Kilimanjaro and relax
+        on the tropical beaches of Zanzibar.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#experiences" class="btn btn-primary">
+          Start Your Adventure
+        </a>
+
+        <a href="#booking" class="btn btn-outline">
+          Plan My Trip
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     CHOOSE EXPERIENCE
+     ======================================================== -->
+
+<section class="experiences" id="experiences">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>Choose Your Adventure</small>
+
+      <h2>
+        What Would You Like To Experience?
+      </h2>
+
+      <p>
+        Choose an experience below and discover the right
+        destination and tour for you.
+      </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+      <div class="experience"
+           onclick="filterTours('safari')">
+
+        <img
+          src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=90"
+          alt="Tanzania safari">
+
+        <div class="experience-content">
+
+          <div class="experience-icon">🦁</div>
+
+          <h3>Safaris</h3>
+
+          <p>
+            Meet Tanzania's incredible wildlife.
+          </p>
+
+          <div class="experience-link">
+            Explore Safaris →
+          </div>
+
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We provide unforgettable safari and tour experiences with professional guides and luxury accommodations.</p>
-    </section>
+      </div>
 
-    <!-- Tours Section -->
-    <section id="tours" class="tours">
-        <h2>Our Tours</h2>
-        <div class="tour-cards">
-            <div class="tour-card">
-                <h3>Safari Adventure</h3>
-                <p>Experience wildlife in their natural habitat</p>
-                <p class="price">$1,500</p>
-            </div>
-            <div class="tour-card">
-                <h3>Mountain Trekking</h3>
-                <p>Climb stunning peaks with breathtaking views</p>
-                <p class="price">$800</p>
-            </div>
-            <div class="tour-card">
-                <h3>Beach Escape</h3>
-                <p>Relax on pristine beaches and enjoy water activities</p>
-                <p class="price">$600</p>
-            </div>
+
+      <div class="experience"
+           onclick="filterTours('zanzibar')">
+
+        <img
+          src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=90"
+          alt="Zanzibar beach">
+
+        <div class="experience-content">
+
+          <div class="experience-icon">🏝️</div>
+
+          <h3>Zanzibar</h3>
+
+          <p>
+            Beaches, culture, ocean and island life.
+          </p>
+
+          <div class="experience-link">
+            Explore Zanzibar →
+          </div>
+
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 FUNFINE TOUR AND SAFARI. All rights reserved.</p>
-    </footer>
+
+      <div class="experience"
+           onclick="filterTours('kilimanjaro')">
+
+        <img
+          src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?auto=format&fit=crop&w=1200&q=90"
+          alt="Kilimanjaro">
+
+        <div class="experience-content">
+
+          <div class="experience-icon">🏔️</div>
+
+          <h3>Kilimanjaro</h3>
+
+          <p>
+            Reach the roof of Africa.
+          </p>
+
+          <div class="experience-link">
+            Explore Kilimanjaro →
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     DESTINATIONS
+     ======================================================== -->
+
+<section class="destination-section">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>Discover Tanzania</small>
+
+      <h2>Popular Destinations</h2>
+
+      <p>
+        From wildlife-filled national parks to paradise islands.
+      </p>
+
+    </div>
+
+
+    <div class="destination-grid">
+
+      <div class="destination"
+           onclick="filterTours('serengeti')">
+
+        <img
+          src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85"
+          alt="Serengeti">
+
+        <div class="destination-info">
+          <h3>Serengeti</h3>
+          <p>Wildlife & Great Migration</p>
+        </div>
+
+      </div>
+
+
+      <div class="destination"
+           onclick="filterTours('ngorongoro')">
+
+        <img
+          src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85"
+          alt="Ngorongoro">
+
+        <div class="destination-info">
+          <h3>Ngorongoro</h3>
+          <p>The famous crater</p>
+        </div>
+
+      </div>
+
+
+      <div class="destination"
+           onclick="filterTours('tarangire')">
+
+        <img
+          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85"
+          alt="Tarangire">
+
+        <div class="destination-info">
+          <h3>Tarangire</h3>
+          <p>Elephants & baobabs</p>
+        </div>
+
+      </div>
+
+
+      <div class="destination"
+           onclick="filterTours('zanzibar')">
+
+        <img
+          src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=85"
+          alt="Zanzibar">
+
+        <div class="destination-info">
+          <h3>Zanzibar</h3>
+          <p>Island paradise</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     TOUR CATALOG
+     ======================================================== -->
+
+<section class="catalog" id="tours">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>Find Your Trip</small>
+
+      <h2>Choose Your Perfect Tour</h2>
+
+      <p>
+        Select a category to see tours designed for your adventure.
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <button class="filter active"
+              onclick="filterTours('all', this)">
+        All Tours
+      </button>
+
+      <button class="filter"
+              onclick="filterTours('safari', this)">
+        🦁 Safaris
+      </button>
+
+      <button class="filter"
+              onclick="filterTours('zanzibar', this)">
+        🏝️ Zanzibar
+      </button>
+
+      <button class="filter"
+              onclick="filterTours('kilimanjaro', this)">
+        🏔️ Kilimanjaro
+      </button>
+
+    </div>
+
+
+    <div class="tour-grid" id="tourGrid"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     ZANZIBAR FEATURE
+     ======================================================== -->
+
+<section class="zanzibar" id="zanzibar">
+
+  <div class="container">
+
+    <div class="zanzibar-content">
+
+      <h2>
+        Finish Your Safari With Zanzibar
+      </h2>
+
+      <p>
+        Imagine watching the sunset in Serengeti and then
+        relaxing beside the turquoise waters of Zanzibar.
+        We can combine your safari with an unforgettable
+        island holiday.
+      </p>
+
+      <button
+        class="btn btn-primary"
+        onclick="filterTours('zanzibar')">
+        Explore Zanzibar Tours
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     WHY FUNFINE
+     ======================================================== -->
+
+<section class="why">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <small>Why FUNFINE?</small>
+
+      <h2>Travel With Confidence</h2>
+
+      <p>
+        Your adventure should be exciting, comfortable and memorable.
+      </p>
+
+    </div>
+
+
+    <div class="benefits">
+
+      <div class="benefit">
+        <div class="benefit-icon">🇹🇿</div>
+        <h3>Local Experience</h3>
+        <p>
+          Tanzania knowledge from people who know the destination.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">🧭</div>
+        <h3>Expert Guides</h3>
+        <p>
+          Experienced guides to make your journey special.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">💰</div>
+        <h3>Flexible Prices</h3>
+        <p>
+          Packages can be adapted to your budget and preferences.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">❤️</div>
+        <h3>Personal Service</h3>
+        <p>
+          We help plan your trip from the first message to the last day.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     ABOUT
+     ======================================================== -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=90"
+          alt="Safari adventure">
+
+      </div>
+
+
+      <div class="about-text">
+
+        <small>About FUNFINE</small>
+
+        <h2>
+          FUN IS FINE When You're Exploring Tanzania
+        </h2>
+
+        <p>
+          FUNFINE TOUR AND SAFARI is based in Zanzibar,
+          Tanzania, and is focused on creating unforgettable
+          travel experiences throughout Tanzania.
+        </p>
+
+        <p>
+          Whether you want a short safari, a longer wildlife
+          adventure, a Kilimanjaro climb or a relaxing Zanzibar
+          holiday, we can help you plan your journey.
+        </p>
+
+        <ul class="checks">
+          <li>Safari adventures</li>
+          <li>Zanzibar holidays</li>
+          <li>Kilimanjaro adventures</li>
+          <li>Private and group tours</li>
+          <li>Custom travel packages</li>
+        </ul>
+
+        <a href="#booking" class="btn btn-green">
+          Plan My Trip
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     BOOKING
+     ======================================================== -->
+
+<section class="booking" id="booking">
+
+  <div class="container">
+
+    <div class="booking-box">
+
+      <div class="booking-info">
+
+        <h2>
+          Ready For Your Adventure?
+        </h2>
+
+        <p>
+          Tell FUNFINE what you want to experience and we'll
+          help you plan your Tanzania adventure.
+        </p>
+
+        <div class="contact">
+          <strong>📱 WhatsApp / Phone</strong>
+          +255 620 479 433
+        </div>
+
+        <div class="contact">
+          <strong>📧 Email</strong>
+          finefun630@gmail.com
+        </div>
+
+        <div class="contact">
+          <strong>📍 Location</strong>
+          Zanzibar, Tanzania
+        </div>
+
+        <div class="contact">
+          <strong>💵 Currency</strong>
+          USD + TZS
+        </div>
+
+      </div>
+
+
+      <form class="booking-form" id="bookingForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label>Full Name *</label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Your full name"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Email *</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Your email"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>WhatsApp / Phone *</label>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+..."
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Travelers</label>
+
+            <input
+              type="number"
+              id="travelers"
+              min="1"
+              value="2">
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Choose Experience *</label>
+
+            <select id="experience" required>
+
+              <option value="">
+                Select
+              </option>
+
+              <option value="Safari">
+                🦁 Safari
+              </option>
+
+              <option value="Zanzibar">
+                🏝️ Zanzibar
+              </option>
+
+              <option value="Kilimanjaro">
+                🏔️ Kilimanjaro
+              </option>
+
+              <option value="Custom">
+                ✨ Custom Trip
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Preferred Tour</label>
+
+            <select id="selectedTour">
+
+              <option value="">
+                Select tour
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Travel Date *</label>
+
+            <input
+              type="date"
+              id="date"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Budget / Currency</label>
+
+            <select id="currency">
+
+              <option>USD</option>
+              <option>TZS</option>
+              <option>USD + TZS</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label>Additional Message</label>
+
+            <textarea
+              id="message"
+              placeholder="Tell us about your dream trip, number of days, accommodation preferences, special requests, etc."></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button class="btn btn-primary"
+                style="width:100%;"
+                type="submit">
+
+          Send Booking Request on WhatsApp
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>FUNFINE TOUR AND SAFARI</h3>
+
+        <p>
+          <strong style="color:#f5d27d;">
+            FUN IS FINE.
+          </strong>
+        </p>
+
+        <p>
+          Discover Tanzania through unforgettable safaris,
+          island adventures and mountain experiences.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Explore</h3>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="#zanzibar">Zanzibar</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>Destinations</h3>
+
+        <ul>
+          <li>Serengeti</li>
+          <li>Ngorongoro</li>
+          <li>Tarangire</li>
+          <li>Manyara</li>
+          <li>Zanzibar</li>
+          <li>Kilimanjaro</li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <ul>
+          <li>📱 +255 620 479 433</li>
+          <li>📧 finefun630@gmail.com</li>
+          <li>📍 Zanzibar, Tanzania</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © <span id="year"></span>
+      FUNFINE TOUR AND SAFARI.
+      FUN IS FINE. All Rights Reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ========================================================
+     WHATSAPP
+     ======================================================== -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/255620479433?text=Hello%20FUNFINE%20TOUR%20AND%20SAFARI%2C%20I%20would%20like%20to%20plan%20a%20trip."
+  target="_blank"
+  aria-label="WhatsApp FUNFINE">
+
+  💬
+
+</a>
+
+
+<!-- ========================================================
+     TOUR DETAILS MODAL
+     ======================================================== -->
+
+<div class="modal" id="tourModal">
+
+  <div class="modal-box">
+
+    <div class="modal-image">
+
+      <button class="close" onclick="closeTour()">
+        ×
+      </button>
+
+      <img id="modalImage" src="" alt="Tour">
+
+    </div>
+
+
+    <div class="modal-content">
+
+      <h2 id="modalTitle"></h2>
+
+      <div class="modal-price" id="modalPrice"></div>
+
+      <p id="modalDescription"></p>
+
+
+      <h3>Sample Itinerary</h3>
+
+      <ul class="itinerary" id="modalItinerary"></ul>
+
+
+      <h3>What's Included</h3>
+
+      <div class="included" id="modalIncluded"></div>
+
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        id="modalBook">
+
+        Book This Tour
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   TOUR DATABASE
+
+   EDIT YOUR TOURS HERE.
+   You can change:
+   - Name
+   - Price USD
+   - Price TZS
+   - Days
+   - Category
+   - Image
+   - Description
+   - Itinerary
+   ========================================================= */
+
+const tours = [
+
+  {
+    id: 1,
+    category: "safari",
+    name: "Serengeti Safari",
+    days: "4 Days / 3 Nights",
+    usd: "$850",
+    tzs: "TZS 2,150,000",
+    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Explore the legendary Serengeti plains and experience Tanzania's spectacular wildlife.",
+    itinerary: [
+      "Day 1 — Arusha to Serengeti",
+      "Day 2 — Full-day Serengeti game drive",
+      "Day 3 — Serengeti wildlife adventure",
+      "Day 4 — Serengeti to Arusha"
+    ],
+    included: [
+      "Safari vehicle",
+      "Professional guide",
+      "Park fees",
+      "Accommodation",
+      "Meals",
+      "Game drives"
+    ]
+  },
+
+
+  {
+    id: 2,
+    category: "safari",
+    name: "Serengeti & Ngorongoro",
+    days: "5 Days / 4 Nights",
+    usd: "$1,150",
+    tzs: "TZS 2,900,000",
+    image: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Combine the Serengeti with the incredible Ngorongoro Crater for a classic northern Tanzania safari.",
+    itinerary: [
+      "Day 1 — Arusha to Tarangire",
+      "Day 2 — Tarangire to Serengeti",
+      "Day 3 — Serengeti game drive",
+      "Day 4 — Serengeti to Ngorongoro",
+      "Day 5 — Ngorongoro to Arusha"
+    ],
+    included: [
+      "Transport",
+      "Safari guide",
+      "Park fees",
+      "Accommodation",
+      "Meals",
+      "Game drives"
+    ]
+  },
+
+
+  {
+    id: 3,
+    category: "safari",
+    name: "Tarangire Safari",
+    days: "2 Days / 1 Night",
+    usd: "$450",
+    tzs: "TZS 1,150,000",
+    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "A short safari perfect for travelers who want elephants, baobabs and beautiful landscapes.",
+    itinerary: [
+      "Day 1 — Arusha to Tarangire",
+      "Day 1 — Afternoon game drive",
+      "Day 2 — Morning game drive",
+      "Day 2 — Return to Arusha"
+    ],
+    included: [
+      "Transport",
+      "Professional guide",
+      "Park fees",
+      "Accommodation",
+      "Meals",
+      "Game drives"
+    ]
+  },
+
+
+  {
+    id: 4,
+    category: "safari",
+    name: "Tanzania Family Safari",
+    days: "6 Days / 5 Nights",
+    usd: "$1,250",
+    tzs: "TZS 3,200,000",
+    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "A flexible family adventure combining wildlife, nature and comfortable travel.",
+    itinerary: [
+      "Day 1 — Arusha arrival",
+      "Day 2 — Tarangire",
+      "Day 3 — Ngorongoro",
+      "Day 4 — Serengeti",
+      "Day 5 — Serengeti",
+      "Day 6 — Return to Arusha"
+    ],
+    included: [
+      "Family-friendly guide",
+      "Transport",
+      "Park fees",
+      "Accommodation",
+      "Meals",
+      "Game drives"
+    ]
+  },
+
+
+  {
+    id: 5,
+    category: "zanzibar",
+    name: "Zanzibar Escape",
+    days: "5 Days / 4 Nights",
+    usd: "$750",
+    tzs: "TZS 1,900,000",
+    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Relax on Zanzibar's beautiful beaches and discover Stone Town, spice farms and the Indian Ocean.",
+    itinerary: [
+      "Day 1 — Arrival in Zanzibar",
+      "Day 2 — Stone Town tour",
+      "Day 3 — Spice tour and beach",
+      "Day 4 — Ocean / snorkeling experience",
+      "Day 5 — Departure"
+    ],
+    included: [
+      "Airport transfer",
+      "Accommodation",
+      "Breakfast",
+      "Stone Town tour",
+      "Spice tour",
+      "Beach activities"
+    ]
+  },
+
+
+  {
+    id: 6,
+    category: "zanzibar",
+    name: "Zanzibar Beach Holiday",
+    days: "7 Days / 6 Nights",
+    usd: "$1,050",
+    tzs: "TZS 2,650,000",
+    image: "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Enjoy a relaxing week of tropical beaches, ocean adventures and Zanzibar culture.",
+    itinerary: [
+      "Day 1 — Arrival",
+      "Day 2 — Beach relaxation",
+      "Day 3 — Stone Town",
+      "Day 4 — Spice experience",
+      "Day 5 — Ocean adventure",
+      "Day 6 — Free beach day",
+      "Day 7 — Departure"
+    ],
+    included: [
+      "Accommodation",
+      "Breakfast",
+      "Transfers",
+      "Stone Town tour",
+      "Spice tour",
+      "Ocean activity"
+    ]
+  },
+
+
+  {
+    id: 7,
+    category: "kilimanjaro",
+    name: "Kilimanjaro Adventure",
+    days: "7 Days",
+    usd: "$1,600",
+    tzs: "TZS 4,050,000",
+    image: "https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Take on Africa's highest mountain with professional guides and a carefully planned route.",
+    itinerary: [
+      "Day 1 — Machame Gate",
+      "Day 2 — Machame Camp",
+      "Day 3 — Shira Camp",
+      "Day 4 — Barranco Camp",
+      "Day 5 — Karanga Camp",
+      "Day 6 — Summit attempt",
+      "Day 7 — Descent"
+    ],
+    included: [
+      "Mountain guides",
+      "Park fees",
+      "Camping",
+      "Meals",
+      "Porters",
+      "Safety support"
+    ]
+  },
+
+
+  {
+    id: 8,
+    category: "safari",
+    name: "Luxury Tanzania Safari",
+    days: "7 Days / 6 Nights",
+    usd: "$2,800",
+    tzs: "TZS 7,100,000",
+    image: "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "A premium Tanzania safari experience with more comfort, private travel and unforgettable wildlife.",
+    itinerary: [
+      "Day 1 — Arusha",
+      "Day 2 — Tarangire",
+      "Day 3 — Ngorongoro",
+      "Day 4 — Serengeti",
+      "Day 5 — Serengeti",
+      "Day 6 — Serengeti",
+      "Day 7 — Return"
+    ],
+    included: [
+      "Private vehicle",
+      "Private guide",
+      "Premium accommodation",
+      "Park fees",
+      "Meals",
+      "Game drives"
+    ]
+  }
+
+];
+
+
+/* =========================================================
+   DISPLAY TOURS
+   ========================================================= */
+
+const tourGrid = document.getElementById("tourGrid");
+
+function displayTours(category = "all") {
+
+  let list = tours;
+
+  if(category !== "all") {
+    list = tours.filter(tour =>
+      tour.category === category ||
+      tour.name.toLowerCase().includes(category.toLowerCase())
+    );
+  }
+
+  tourGrid.innerHTML = "";
+
+  if(list.length === 0) {
+
+    tourGrid.innerHTML = `
+      <p style="grid-column:1/-1;text-align:center;">
+        No tours found.
+      </p>
+    `;
+
+    return;
+  }
+
+
+  list.forEach(tour => {
+
+    tourGrid.innerHTML += `
+
+      <article class="tour-card">
+
+        <div class="tour-photo">
+
+          <img
+            src="${tour.image}"
+            alt="${tour.name}">
+
+          <span class="badge">
+            ${tour.category.toUpperCase()}
+          </span>
+
+        </div>
+
+
+        <div class="tour-body">
+
+          <div class="tour-category">
+            ${tour.category}
+          </div>
+
+          <h3>
+            ${tour.name}
+          </h3>
+
+          <div class="tour-meta">
+
+            <span>
+              📅 ${tour.days}
+            </span>
+
+            <span>
+              🇹🇿 Tanzania
+            </span>
+
+          </div>
+
+          <p>
+            ${tour.description}
+          </p>
+
+
+          <div class="tour-footer">
+
+            <div class="price">
+
+              ${tour.usd}
+
+              <small>
+                ${tour.tzs}
+              </small>
+
+            </div>
+
+
+            <button
+              class="btn btn-green"
+              onclick="openTour(${tour.id})">
+
+              View Tour
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+}
+
+
+/* =========================================================
+   FILTER TOURS
+   ========================================================= */
+
+function filterTours(category, button) {
+
+  displayTours(category);
+
+  document.getElementById("tours")
+    .scrollIntoView({behavior:"smooth"});
+
+  document.querySelectorAll(".filter")
+    .forEach(btn => btn.classList.remove("active"));
+
+  if(button) {
+    button.classList.add("active");
+  }
+
+}
+
+
+/* =========================================================
+   TOUR MODAL
+   ========================================================= */
+
+function openTour(id) {
+
+  const tour = tours.find(t => t.id === id);
+
+  if(!tour) return;
+
+
+  document.getElementById("modalImage").src =
+    tour.image;
+
+  document.getElementById("modalTitle").textContent =
+    tour.name;
+
+  document.getElementById("modalPrice").textContent =
+    `${tour.usd} per person • ${tour.tzs}`;
+
+  document.getElementById("modalDescription").textContent =
+    tour.description;
+
+
+  document.getElementById("modalItinerary").innerHTML =
+    tour.itinerary.map(item =>
+      `<li><strong>${item}</strong></li>`
+    ).join("");
+
+
+  document.getElementById("modalIncluded").innerHTML =
+    tour.included.map(item =>
+      `<div>✓ ${item}</div>`
+    ).join("");
+
+
+  document.getElementById("tourModal")
+    .classList.add("active");
+
+
+  document.getElementById("modalBook")
+    .onclick = function() {
+
+      document.getElementById("selectedTour").value =
+        tour.name;
+
+      closeTour();
+
+      document.getElementById("booking")
+        .scrollIntoView({behavior:"smooth"});
+
+    };
+
+}
+
+
+function closeTour() {
+
+  document.getElementById("tourModal")
+    .classList.remove("active");
+
+}
+
+
+/* Close modal when clicking outside */
+
+document.getElementById("tourModal")
+  .addEventListener("click", function(e) {
+
+    if(e.target === this) {
+      closeTour();
+    }
+
+  });
+
+
+/* =========================================================
+   BOOKING TOUR OPTIONS
+   ========================================================= */
+
+const selectedTour =
+  document.getElementById("selectedTour");
+
+tours.forEach(tour => {
+
+  const option =
+    document.createElement("option");
+
+  option.value = tour.name;
+  option.textContent =
+    `${tour.name} — ${tour.usd}`;
+
+  selectedTour.appendChild(option);
+
+});
+
+
+/* =========================================================
+   BOOKING FORM → WHATSAPP
+   ========================================================= */
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+
+  const name =
+    document.getElementById("name").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const phone =
+    document.getElementById("phone").value;
+
+  const travelers =
+    document.getElementById("travelers").value;
+
+  const experience =
+    document.getElementById("experience").value;
+
+  const tour =
+    document.getElementById("selectedTour").value;
+
+  const date =
+    document.getElementById("date").value;
+
+  const currency =
+    document.getElementById("currency").value;
+
+  const message =
+    document.getElementById("message").value;
+
+
+  const text =
+
+`Hello FUNFINE TOUR AND SAFARI!
+
+I would like to plan a trip.
+
+Name: ${name}
+Email: ${email}
+Phone/WhatsApp: ${phone}
+Travelers: ${travelers}
+Experience: ${experience}
+Tour: ${tour || "Not selected"}
+Travel Date: ${date}
+Currency: ${currency}
+
+Message:
+${message}
+
+FUN IS FINE!`;
+
+
+  const url =
+    "https://wa.me/255620479433?text=" +
+    encodeURIComponent(text);
+
+
+  window.open(url,"_blank");
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+
+});
+
+
+/* =========================================================
+   YEAR
+   ========================================================= */
+
+document.getElementById("year")
+.textContent = new Date().getFullYear();
+
+
+/* =========================================================
+   START WEBSITE
+   ========================================================= */
+
+displayTours("all");
+
+</script>
+
 </body>
 </html>
+```
