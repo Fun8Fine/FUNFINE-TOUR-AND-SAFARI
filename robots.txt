@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fun8fine.github.io/FUNFINE-TOUR-AND-SAFARI/sitemap.xml
