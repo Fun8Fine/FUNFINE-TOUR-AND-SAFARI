@@ -2468,3 +2468,122 @@ displayTours("all");
 </script>
 
 </body>
+<!-- FUN FINE TOUR & SAFARI — 4:20 SECRET EASTER EGG -->
+<div id="secret420" class="secret-420">
+  <div class="secret-420-box">
+    <button class="secret-420-close" onclick="close420()">×</button>
+    <div class="secret-420-icon">🌴</div>
+    <h2>Secret Traveler</h2>
+    <p>You discovered the hidden 4:20 code.</p>
+    <p class="secret-message">Your adventure has a secret side.</p>
+    <span>FUN FINE TOUR AND SAFARI</span>
+  </div>
+</div>
+
+<style>
+.secret-420 {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 30, 20, 0.75);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.secret-420.show {
+  display: flex;
+  animation: fade420 0.4s ease;
+}
+
+.secret-420-box {
+  position: relative;
+  width: min(90%, 430px);
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #f3ead1);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  border: 3px solid #c99a28;
+}
+
+.secret-420-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.secret-420-box h2 {
+  margin: 5px 0;
+  color: #075b3a;
+  font-size: 32px;
+}
+
+.secret-420-box p {
+  color: #333;
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.secret-message {
+  color: #b8860b !important;
+  font-weight: bold;
+}
+
+.secret-420-box span {
+  display: block;
+  margin-top: 20px;
+  color: #075b3a;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.secret-420-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: #075b3a;
+}
+
+@keyframes fade420 {
+  from {
+    opacity: 0;
+    transform: scale(.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>
+
+<script>
+let secretCode420 = "";
+
+document.addEventListener("keydown", function(event) {
+  secretCode420 += event.key;
+
+  // Keep only the last 3 characters
+  if (secretCode420.length > 3) {
+    secretCode420 = secretCode420.slice(-3);
+  }
+
+  // Detect 420 or 4:20
+  if (
+    secretCode420 === "420" ||
+    secretCode420 === "4:2"
+  ) {
+    document.getElementById("secret420").classList.add("show");
+    secretCode420 = "";
+  }
+});
+
+function close420() {
+  document.getElementById("secret420").classList.remove("show");
+}
+</script>
